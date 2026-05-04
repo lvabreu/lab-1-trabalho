@@ -21,14 +21,18 @@ class cArvoreBinaria:
   chave = 0
 
 # *******************************************************
-  def __init__(self, n):
-    self.__raiz   = None #cabeça da árvore (pai)
+  def __init__(self):
+    self.__raiz   = None  #cabeça da árvore (pai)
     self.__numNos = 0 #quantidade de nós, vetor posição árvore
-    self.__raiz   = self.__MontaAB(n)
+    
     
 # *******************************************************
   def getNumNos(self):
-    return self.__numNos
+    return self.__numNos  #perguntando quantos nos eu tenho
+
+# *******************************************************
+  def getRaiz(self):
+    return self.__raiz #obter raiz 
 
 # *******************************************************
   def percorreArvore(self, percurso=percursos.POST_ORDEM):
@@ -43,21 +47,30 @@ class cArvoreBinaria:
       self.__postOrdem(self.__raiz)
  
 # *******************************************************
-  def __MontaAB(self, n):
+  def inserir(self, n):
     
-    if n <= 0: 
-      return None
-    
-    novoNo = cNo.cNo(cArvoreBinaria.chave)
-    cArvoreBinaria.chave += 1
+    novoNo = cNo.cNo(n)
 
-    numDir = (n-1)//2
-    numEsq = (n - 1) - numDir 
-
-    novoNo.setFilhoEsq(self.__MontaAB(numEsq))
-    novoNo.setFilhoDir(self.__MontaAB(numDir))
-    
-    return novoNo
+    if self.__raiz == None:
+      self.__raiz = novoNo
+      self.__numNos += 1
+    else: 
+      novaArvore = self.__raiz
+      while True: 
+        arvore = novaArvore
+        if n <= novaArvore.getDado():
+          novaArvore = novaArvore.getFilhoEsq()
+          if novaArvore is None:
+            arvore.setFilhoEsq(novoNo)
+            self.__numNos +=1 
+            return 
+        else: 
+          novaArvore = novaArvore.getFilhoDir()
+          if novaArvore == None: 
+            arvore.setFilhoDir(novoNo)
+            self.__numNos += 1
+            return
+       
     
 # *******************************************************
   def __preOrdem(self, raiz):
@@ -69,20 +82,22 @@ class cArvoreBinaria:
 # *******************************************************
   def __inOrdem(self, raiz):
     if raiz != None :
-      self.__preOrdem(raiz.getFilhoEsq())
+      self.__inOrdem(raiz.getFilhoEsq())
       print(raiz.getDado())
-      self.__preOrdem(raiz.getFilhoDir())
+      self.__inOrdem(raiz.getFilhoDir())
     
  
 # *******************************************************
   def __postOrdem(self, raiz):
     if raiz != None :
-      self.__preOrdem(raiz.getFilhoEsq())
-      self.__preOrdem(raiz.getFilhoDir())
+      self.__postOrdem(raiz.getFilhoEsq())
+      self.__postOrdem(raiz.getFilhoDir())
       print(raiz.getDado())
 
 # *******************************************************
-  def buscaDado(self, arvore, dado):
+# Consultas em uma árvore de busca binária 
+
+  def buscaDado(self, dado):
     raiz = self.__raiz
     while raiz != None and dado != raiz.getDado(): 
       if dado < raiz.getDado(): 
@@ -92,30 +107,45 @@ class cArvoreBinaria:
     
     return raiz is not None
       
+  def minArvore(self,):
+    raiz = self.__raiz
+    while raiz is not None and raiz.getFilhoEsq() is not None:
+      raiz = raiz.getFilhoEsq()
+    return raiz
+  
+  def maxArvore(self):
+    raiz = self.__raiz
+    while raiz is not None and raiz.getFilhoDir() is not None:
+      raiz = raiz.getFilhoDir()
+    return raiz 
+  
+  def sucesArvore(self):
+    raiz = self.__raiz
+    if raiz.getFilhoDir() is not None and self.percorreArvore(percurso=percursos.IN_ORDEM):
+      return self.minArvore()
 
 # *******************************************************
 # ***                                                 ***
 # *******************************************************
 if __name__ == '__main__':
+  
+  
+  arvore = cArvoreBinaria()
 
-  arvore = cArvoreBinaria(20)
+  print("Inserindo valores:")
+  for valor in [10, 5, 15, 3, 12, 1]:
+    arvore.inserir(valor)
+  
+  print(f"Total de nós: {arvore.getNumNos()}\n")
 
-  print("chave = ", arvore.chave)
-  print("Busca em árvore binária")
-  encontrou = arvore.buscaDado(7)
-  print(f"Valor encontrado?", encontrou)
+  # Testando busca
+  print("Testando buscas:")
+  print(f"Busca 7: {arvore.buscaDado(7)}")
+  print(f"Busca 12: {arvore.buscaDado(12)}")
+  print(f"Busca 100: {arvore.buscaDado(100)}\n")
+  print(f"Busca mínimo: {arvore.minArvore().getDado()}\n")
+  print(f"Busca máximo: {arvore.maxArvore().getDado()}\n") 
 
-#   print("Percurso em Pré-Ordem:")
-#   print("======================")
-#   arvore.percorreArvore(percursos.PRE_ORDEM)
-#   print("======================")
-
-#   print("Percurso em In-Ordem:")
-#   print("======================")
-#   arvore.percorreArvore(percursos.IN_ORDEM)
-#   print("======================")
-
-#   print("Percurso em Post-Ordem:")
-#   print("======================")
-#   arvore.percorreArvore(percursos.POST_ORDEM)
-#   print("======================")
+  # Percursos
+  print("Percurso em In-Ordem (valores em ordem ):")
+  arvore.percorreArvore(percursos.PRE_ORDEM)
