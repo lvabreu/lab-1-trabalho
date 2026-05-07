@@ -8,6 +8,7 @@ Cada pasta terá seu README para auxilio no entendimento.
 
 ## - Estrutura dos diretórios -   
 
+.
 ├── src
 │   ├── array
 │   │   ├── array.py
