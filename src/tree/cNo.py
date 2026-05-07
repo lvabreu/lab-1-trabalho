@@ -10,6 +10,7 @@ class cNo:
     self.__dado   = dado
     self.__fEsq   = None
     self.__fDir   = None
+    self.altura   =  1 
   
 # *******************************************************
   def getDado(self):
@@ -36,6 +37,14 @@ class cNo:
     self.__fDir = filhoDir
 
 # *******************************************************
+  def getAltura(self):
+    return self.altura
+
+# *******************************************************
+  def setAltura(self, altura):
+        self.altura = altura
+
+# *******************************************************
 # *******************************************************
   def __str__(self):
 
@@ -51,16 +60,18 @@ class cNo:
 # *******************************************************
 if __name__ == '__main__':
 
-  pai       = cNo(10);
-  print(f' {pai}');
-  filhoDir  = cNo(20);
-  print(f' {filhoDir}');
-  filhoEsq  = cNo(30);
-  print(f' {filhoEsq}');
+  pai       = cNo(10)
+  print(f' {pai}')
+  filhoDir  = cNo(20)
+  print(f' {filhoDir}')
+  filhoEsq  = cNo(30)
+  print(f' {filhoEsq}')
+  altura = cNo(10)
  
-  pai.setFilhoDir(filhoDir);
-  pai.setFilhoEsq(filhoEsq);
-
-  print(pai);
-  print(filhoDir);
-  print(filhoEsq);
+  pai.setFilhoDir(filhoDir)
+  pai.setFilhoEsq(filhoEsq)
+  pai.setAltura(altura)
+  print(pai.getAltura())
+  print(pai)
+  print(pai.getFilhoDir())
+  print(filhoEsq)
