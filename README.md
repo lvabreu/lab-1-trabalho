@@ -6,43 +6,39 @@ Como auxiliar foi realizado um artigo que descreve as condições de implementa�
 
 Cada pasta terá seu README para auxilio no entendimento. 
 
-## - Estrutura dos diretórios -   
 
-.
-├── src
-│   ├── array
-│   │   ├── array.py
-│   │   ├── main.py
-│   │   └── README.md
-│   │
-│   ├── heap
-│   │   ├── cNo.py
-│   │   ├── main.py
-│   │   ├── maxHeap.py
-│   │   ├── minHeap.py
-│   │   └── README.md
-│   │
-│   ├── lista
-│   │   ├── cNo.py
-│   │   ├── list.py
-│   │   ├── main.py
-│   │   └── README.md
-│   │
-│   └── tree
-│       ├── ABB.py
-│       ├── AVL.py
-│       ├── cNo.py
-│       └── README.md
-│
-└── README.md
+## 📂 Estrutura do Projeto
+
+```text
+lab-1-trabalho/
+├── README.md
+├── examples/
+└── src/
+    ├── array/
+    │   ├── array.py
+    │   └── main.py
+    ├── heap/
+    │   ├── cNo.py
+    │   ├── main.py
+    │   ├── max_heap.py
+    │   └── min_heap.py
+    ├── lista/
+    │   ├── cNo.py
+    │   ├── lista.py
+    │   ├── main.py
+    │   └── README.md
+    └── tree/
+        ├── ABB.py
+        ├── AVL.py
+        ├── cNo.py
+        ├── main.py
+        └── README.md
+```
 
 ## Como rodar o código 
 
 1. Clone o repositório
-2. Abra o código no vs code
-3. Entre na pasta 'cd lab-1-trabalho'
-4. Entre na pasta desejada (Heap, lista, ...)
-5. Insira python3 <nome-do-arquivo-q-vai-rodar>
-
-
-    
+2. Abra o código no VS Code
+3. Entre na pasta: `cd lab-1-trabalho/lab-1-trabalho`
+4. Entre na subpasta desejada (heap, lista, array, tree)
+5. Execute: `python3 main.py` ou `python3 <nome-do-arquivo>`
