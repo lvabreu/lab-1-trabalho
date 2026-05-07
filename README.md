@@ -12,7 +12,6 @@ Cada pasta terá seu README para auxilio no entendimento.
 ```text
 lab-1-trabalho/
 ├── README.md
-├── examples/
 └── src/
     ├── array/
     │   ├── array.py
