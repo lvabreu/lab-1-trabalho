@@ -13,22 +13,22 @@ Cada pasta terá seu README para auxilio no entendimento.
 |     └── array.py
 |     └── main.py
 |     └── README.md
-    └── heap
-      └── cNo.py
-      └── main.py
-      └── maxHeap.py
-      └── minHeap.py
-      └── README.md
-    └── lista
-      └── cNo.py
-      └── list.py
-      └── main.py
-      └── README.md
-    └── tree
-      └── ABB.py
-      └── AVL.py
-      └── cNo.py
-      └── README.md
+|    └── heap
+|      └── cNo.py
+|      └── main.py
+|      └── maxHeap.py
+|      └── minHeap.py
+|      └── README.md
+|    └── lista
+|      └── cNo.py
+|      └── list.py
+|      └── main.py
+|      └── README.md
+|    └── tree
+|      └── ABB.py
+|      └── AVL.py
+|      └── cNo.py
+|      └── README.md
 ├── README.md
 
 > 
