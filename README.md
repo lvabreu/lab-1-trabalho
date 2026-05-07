@@ -6,30 +6,42 @@ Como auxiliar foi realizado um artigo que descreve as condições de implementa�
 
 Cada pasta terá seu README para auxilio no entendimento. 
 
-## - Estrutura das pastas -   
+## - Estrutura dos diretórios -   
 
 ├── src
-|   └── array
-|     └── array.py
-|     └── main.py
-|     └── README.md
-|    └── heap
-|      └── cNo.py
-|      └── main.py
-|      └── maxHeap.py
-|      └── minHeap.py
-|      └── README.md
-|    └── lista
-|      └── cNo.py
-|      └── list.py
-|      └── main.py
-|      └── README.md
-|    └── tree
-|      └── ABB.py
-|      └── AVL.py
-|      └── cNo.py
-|      └── README.md
-├── README.md
+│   ├── array
+│   │   ├── array.py
+│   │   ├── main.py
+│   │   └── README.md
+│   │
+│   ├── heap
+│   │   ├── cNo.py
+│   │   ├── main.py
+│   │   ├── maxHeap.py
+│   │   ├── minHeap.py
+│   │   └── README.md
+│   │
+│   ├── lista
+│   │   ├── cNo.py
+│   │   ├── list.py
+│   │   ├── main.py
+│   │   └── README.md
+│   │
+│   └── tree
+│       ├── ABB.py
+│       ├── AVL.py
+│       ├── cNo.py
+│       └── README.md
+│
+└── README.md
 
-> 
+## Como rodar o código 
+
+1. Clone o repositório
+2. Abra o código no vs code
+3. Entre na pasta 'cd lab-1-trabalho'
+4. Entre na pasta desejada (Heap, lista, ...)
+5. Insira python3 <nome-do-arquivo-q-vai-rodar>
+
+
     
