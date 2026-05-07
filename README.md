@@ -9,10 +9,10 @@ Cada pasta terá seu README para auxilio no entendimento.
 ## - Estrutura das pastas -   
 
 ├── src
-    └── array
-      └── array.py
-      └── main.py
-      └── README.md
+|   └── array
+|     └── array.py
+|     └── main.py
+|     └── README.md
     └── heap
       └── cNo.py
       └── main.py
