@@ -34,3 +34,7 @@ if __name__ == "__main__":
     print(arr.get(1))
     print(arr.pop())
     arr.print()
+
+    
+ 
+    
